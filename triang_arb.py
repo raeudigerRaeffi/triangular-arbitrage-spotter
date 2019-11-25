@@ -13,12 +13,12 @@ def k_trading_pair(a1):
     a_3 = k.query_public('Ticker',{"pair" : a1[2] })
     return [a_1["result"],a_2["result"],a_3["result"]]
 
-def calc_arb(a1,a2,a3,x):
+def calc_arb(a1,a2,a3):
     
     way1 = (1 * float(a1["b"][0]) * float(a3["b"][0]) / float(a2["a"][0])) * (1-fee)**3
     way2 = (1 * float(a2["b"][0]) / float(a3["a"][0]) / float(a1["a"][0])) * (1-fee)**3
     
-    print(x)
+  
     print("way1: " +str(way1-1)+"%")
     print("way2: " +str(way1-1)+"%")
   
@@ -26,5 +26,6 @@ def calc_arb(a1,a2,a3,x):
 while True:
     for x in pair:
         pairs = k_trading_pair(x)
-        calc_arb(pairs[0][x[0]],pairs[1][x[1]],pairs[2][x[2]],x)
+        print(x)
+        calc_arb(pairs[0][x[0]],pairs[1][x[1]],pairs[2][x[2]])
     
