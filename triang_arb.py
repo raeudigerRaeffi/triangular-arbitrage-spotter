@@ -18,12 +18,9 @@ def calc_arb(a1,a2,a3,x):
     way1 = (1 * float(a1["b"][0]) * float(a3["b"][0]) / float(a2["a"][0])) * (1-fee)**3
     way2 = (1 * float(a2["b"][0]) / float(a3["a"][0]) / float(a1["a"][0])) * (1-fee)**3
     
-    if way1 > 1 :
-        print(x)
-        print("way1 percentage: " + str(way1-1))
-    if way2 > 1 : 
-        print(x)
-        print("way2 percentage: " + str(way2-1))
+    print(x)
+    print("way1: " +str(way1-1)+"%")
+    print("way2: " +str(way1-1)+"%")
   
 
 while True:
